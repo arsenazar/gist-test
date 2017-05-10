@@ -1,6 +1,6 @@
 *****BDD-CUCUMBER-NODE-TEST-API-REST*****
 
-You have to ATDD (Acceptance Test Driven Development) reverse Gists V3 API[https://developer.github.com/v3/gists/] 
+You have to ATDD (Acceptance Test Driven Development) reverse [Gists V3 API](https://developer.github.com/v3/gists/) 
 using BDD and Gherkin techniques.
 
 Features to be covered:
@@ -14,7 +14,7 @@ Features to be covered:
 - Star a gist
 - Check if a gist is starred
 - Delete a gist
-Notice that the json response should be valid using JSON-Schema draft-060[https://www.npmjs.com/package/ajv]
+Notice that the json response should be valid using [JSON-Schema draft-060](https://www.npmjs.com/package/ajv)
 
 Stack: Node, CucumberJS, ajv, mocha, chai, request, chaiHttp, ...
 
