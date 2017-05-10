@@ -3,7 +3,7 @@ const github = require('../../models/github');
 
 const World = {
   setUser: function (user, cb) {
-    let token = tokens['user'] || '';
+    let token = tokens[user] || '';
     github.config(user, token);
     cb(null);
   },

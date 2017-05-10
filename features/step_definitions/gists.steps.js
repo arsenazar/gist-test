@@ -2,7 +2,9 @@
 
 const World = require('../support/world');
 // const expect = require('chai').expect;
-const JSONPath = require('jsonpath-plus');
+const jsonpath = require('jsonpath');
+const Ajv = require('ajv');
+const ajv = new Ajv({});
 
 const GithubStepsWrapper = function () {
 
@@ -65,7 +67,6 @@ const GithubStepsWrapper = function () {
       } else {
         this.lastResponse = res;
         this.lastData = data;
-        console.log(data);
         done();
       }
     })
@@ -98,6 +99,22 @@ const GithubStepsWrapper = function () {
   /**
    * Then
    */
+  this.Then(/^ths http status should be "([^"]*)"$/, function (status, done) {
+    if (!assertResponse(this.lastResponse, done)) {
+      return
+    }
+    // deliberately using != here (no need to cast integer/string)
+    /* jshint -W116 */
+    if (this.lastResponse.statusCode != status) {
+      /* jshint +W116 */
+      done('The last http response did not have the expected ' +
+        'status, expected ' + status + ' but got ' +
+        this.lastResponse.statusCode)
+    } else {
+      done()
+    }
+  });
+
   this.Then(/^the http status should be (\d+)$/, function (status, done) {
     if (!assertResponse(this.lastResponse, done)) {
       return
@@ -121,6 +138,20 @@ const GithubStepsWrapper = function () {
     } else {
       done(new Error('the list is empty'))
     }
+  });
+
+  this.Then(/^\$\.url should equal "([^"]*)"$/, {timeout: 10 * 1000}, function (url, done) {
+    if (this.lastData) {
+      if (assertPropertyExists(this.lastResponse, '$.url', url, done)) {
+        done();
+      }
+    } else {
+      done('no data')
+    }
+  });
+
+  this.Then(/^the data should be validated by "([^"]*)" schema$/, function (schema, done) {
+    assertGistSchema(this.lastResponse, schema, done)
   });
 
   const assertResponse = function (lastResponse, callback) {
@@ -168,7 +199,7 @@ const GithubStepsWrapper = function () {
       property = object[key]
     } else {
       // JSONPath expression
-      let matches = JSONPath.eval(object, key);
+      let matches = jsonpath.query(object, key);
       if (matches.length === 0) {
         // no match
         callback('The last response did not have the property: ' +
@@ -218,6 +249,17 @@ const GithubStepsWrapper = function () {
       return false
     }
     return true
+  }
+
+  const assertGistSchema = function (lastResponse, schema, callback) {
+    const gistSchema = require(`../../schema/${schema}`);
+    const validateGist = ajv.compile(gistSchema);
+    const data = JSON.parse(lastResponse.body);
+
+    if (validateGist(data))
+      callback()
+    else
+      callback(validateGist.errors);
   }
 };
 

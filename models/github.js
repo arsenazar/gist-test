@@ -1,5 +1,8 @@
-const {GITHUB_API_URL, USER_AGENT} = require('./env');
+const {GITHUB_API_URL, USER_AGENT, REQUEST_DEBUG} = require('./env');
 const request = require('request');
+if (REQUEST_DEBUG) {
+  require('request-debug')(request);
+}
 
 const github = {
 
@@ -18,17 +21,21 @@ const github = {
    */
   API: function (anonymous) {
     let options = {
-      baseUrl: GITHUB_API_URL,
       headers: {
         'User-Agent': USER_AGENT
       }
     };
-    if (!anonymous)
-      options.aurh = {
-        user: this.user,
-        pass: this.accessToken,
-        sendImmediately: false
-      };
+    if (anonymous)
+      // options.aurh = {
+      //   user: this.user,
+      //   pass: this.accessToken,
+      //   'sendImmediately': false
+      // };
+      options.baseUrl = GITHUB_API_URL
+    else {
+      options.baseUrl = `https://${this.user}:${this.accessToken}@api.github.com`
+    }
+
     return request.defaults(options);
   },
 

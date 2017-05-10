@@ -1,0 +1,392 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {},
+  "id": "https://api.github.com/gists/:id",
+  "properties": {
+    "comments": {
+      "id": "/properties/comments",
+      "type": "integer"
+    },
+    "comments_url": {
+      "id": "/properties/comments_url",
+      "type": "string"
+    },
+    "commits_url": {
+      "id": "/properties/commits_url",
+      "type": "string"
+    },
+    "created_at": {
+      "id": "/properties/created_at",
+      "type": "string"
+    },
+    "description": {
+      "id": "/properties/description",
+      "type": "string"
+    },
+    "files": {
+      "id": "/properties/files",
+      "properties": {
+        "ring.erl": {
+          "id": "/properties/files/properties/ring.erl",
+          "properties": {
+            "content": {
+              "id": "/properties/files/properties/ring.erl/properties/content",
+              "type": "string"
+            },
+            "language": {
+              "id": "/properties/files/properties/ring.erl/properties/language",
+              "type": "string"
+            },
+            "raw_url": {
+              "id": "/properties/files/properties/ring.erl/properties/raw_url",
+              "type": "string"
+            },
+            "size": {
+              "id": "/properties/files/properties/ring.erl/properties/size",
+              "type": "integer"
+            },
+            "truncated": {
+              "id": "/properties/files/properties/ring.erl/properties/truncated",
+              "type": "boolean"
+            },
+            "type": {
+              "id": "/properties/files/properties/ring.erl/properties/type",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "forks": {
+      "id": "/properties/forks",
+      "items": {
+        "id": "/properties/forks/items",
+        "properties": {
+          "created_at": {
+            "id": "/properties/forks/items/properties/created_at",
+            "type": "string"
+          },
+          "id": {
+            "id": "/properties/forks/items/properties/id",
+            "type": "string"
+          },
+          "updated_at": {
+            "id": "/properties/forks/items/properties/updated_at",
+            "type": "string"
+          },
+          "url": {
+            "id": "/properties/forks/items/properties/url",
+            "type": "string"
+          },
+          "user": {
+            "id": "/properties/forks/items/properties/user",
+            "properties": {
+              "avatar_url": {
+                "id": "/properties/forks/items/properties/user/properties/avatar_url",
+                "type": "string"
+              },
+              "events_url": {
+                "id": "/properties/forks/items/properties/user/properties/events_url",
+                "type": "string"
+              },
+              "followers_url": {
+                "id": "/properties/forks/items/properties/user/properties/followers_url",
+                "type": "string"
+              },
+              "following_url": {
+                "id": "/properties/forks/items/properties/user/properties/following_url",
+                "type": "string"
+              },
+              "gists_url": {
+                "id": "/properties/forks/items/properties/user/properties/gists_url",
+                "type": "string"
+              },
+              "gravatar_id": {
+                "id": "/properties/forks/items/properties/user/properties/gravatar_id",
+                "type": "string"
+              },
+              "html_url": {
+                "id": "/properties/forks/items/properties/user/properties/html_url",
+                "type": "string"
+              },
+              "id": {
+                "id": "/properties/forks/items/properties/user/properties/id",
+                "type": "integer"
+              },
+              "login": {
+                "id": "/properties/forks/items/properties/user/properties/login",
+                "type": "string"
+              },
+              "organizations_url": {
+                "id": "/properties/forks/items/properties/user/properties/organizations_url",
+                "type": "string"
+              },
+              "received_events_url": {
+                "id": "/properties/forks/items/properties/user/properties/received_events_url",
+                "type": "string"
+              },
+              "repos_url": {
+                "id": "/properties/forks/items/properties/user/properties/repos_url",
+                "type": "string"
+              },
+              "site_admin": {
+                "id": "/properties/forks/items/properties/user/properties/site_admin",
+                "type": "boolean"
+              },
+              "starred_url": {
+                "id": "/properties/forks/items/properties/user/properties/starred_url",
+                "type": "string"
+              },
+              "subscriptions_url": {
+                "id": "/properties/forks/items/properties/user/properties/subscriptions_url",
+                "type": "string"
+              },
+              "type": {
+                "id": "/properties/forks/items/properties/user/properties/type",
+                "type": "string"
+              },
+              "url": {
+                "id": "/properties/forks/items/properties/user/properties/url",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "forks_url": {
+      "id": "/properties/forks_url",
+      "type": "string"
+    },
+    "git_pull_url": {
+      "id": "/properties/git_pull_url",
+      "type": "string"
+    },
+    "git_push_url": {
+      "id": "/properties/git_push_url",
+      "type": "string"
+    },
+    "history": {
+      "id": "/properties/history",
+      "items": {
+        "id": "/properties/history/items",
+        "properties": {
+          "change_status": {
+            "id": "/properties/history/items/properties/change_status",
+            "properties": {
+              "additions": {
+                "id": "/properties/history/items/properties/change_status/properties/additions",
+                "type": "integer"
+              },
+              "deletions": {
+                "id": "/properties/history/items/properties/change_status/properties/deletions",
+                "type": "integer"
+              },
+              "total": {
+                "id": "/properties/history/items/properties/change_status/properties/total",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "committed_at": {
+            "id": "/properties/history/items/properties/committed_at",
+            "type": "string"
+          },
+          "url": {
+            "id": "/properties/history/items/properties/url",
+            "type": "string"
+          },
+          "user": {
+            "id": "/properties/history/items/properties/user",
+            "properties": {
+              "avatar_url": {
+                "id": "/properties/history/items/properties/user/properties/avatar_url",
+                "type": "string"
+              },
+              "events_url": {
+                "id": "/properties/history/items/properties/user/properties/events_url",
+                "type": "string"
+              },
+              "followers_url": {
+                "id": "/properties/history/items/properties/user/properties/followers_url",
+                "type": "string"
+              },
+              "following_url": {
+                "id": "/properties/history/items/properties/user/properties/following_url",
+                "type": "string"
+              },
+              "gists_url": {
+                "id": "/properties/history/items/properties/user/properties/gists_url",
+                "type": "string"
+              },
+              "gravatar_id": {
+                "id": "/properties/history/items/properties/user/properties/gravatar_id",
+                "type": "string"
+              },
+              "html_url": {
+                "id": "/properties/history/items/properties/user/properties/html_url",
+                "type": "string"
+              },
+              "id": {
+                "id": "/properties/history/items/properties/user/properties/id",
+                "type": "integer"
+              },
+              "login": {
+                "id": "/properties/history/items/properties/user/properties/login",
+                "type": "string"
+              },
+              "organizations_url": {
+                "id": "/properties/history/items/properties/user/properties/organizations_url",
+                "type": "string"
+              },
+              "received_events_url": {
+                "id": "/properties/history/items/properties/user/properties/received_events_url",
+                "type": "string"
+              },
+              "repos_url": {
+                "id": "/properties/history/items/properties/user/properties/repos_url",
+                "type": "string"
+              },
+              "site_admin": {
+                "id": "/properties/history/items/properties/user/properties/site_admin",
+                "type": "boolean"
+              },
+              "starred_url": {
+                "id": "/properties/history/items/properties/user/properties/starred_url",
+                "type": "string"
+              },
+              "subscriptions_url": {
+                "id": "/properties/history/items/properties/user/properties/subscriptions_url",
+                "type": "string"
+              },
+              "type": {
+                "id": "/properties/history/items/properties/user/properties/type",
+                "type": "string"
+              },
+              "url": {
+                "id": "/properties/history/items/properties/user/properties/url",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "version": {
+            "id": "/properties/history/items/properties/version",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "html_url": {
+      "id": "/properties/html_url",
+      "type": "string"
+    },
+    "id": {
+      "id": "/properties/id",
+      "type": "string"
+    },
+    "owner": {
+      "id": "/properties/owner",
+      "properties": {
+        "avatar_url": {
+          "id": "/properties/owner/properties/avatar_url",
+          "type": "string"
+        },
+        "events_url": {
+          "id": "/properties/owner/properties/events_url",
+          "type": "string"
+        },
+        "followers_url": {
+          "id": "/properties/owner/properties/followers_url",
+          "type": "string"
+        },
+        "following_url": {
+          "id": "/properties/owner/properties/following_url",
+          "type": "string"
+        },
+        "gists_url": {
+          "id": "/properties/owner/properties/gists_url",
+          "type": "string"
+        },
+        "gravatar_id": {
+          "id": "/properties/owner/properties/gravatar_id",
+          "type": "string"
+        },
+        "html_url": {
+          "id": "/properties/owner/properties/html_url",
+          "type": "string"
+        },
+        "id": {
+          "id": "/properties/owner/properties/id",
+          "type": "integer"
+        },
+        "login": {
+          "id": "/properties/owner/properties/login",
+          "type": "string"
+        },
+        "organizations_url": {
+          "id": "/properties/owner/properties/organizations_url",
+          "type": "string"
+        },
+        "received_events_url": {
+          "id": "/properties/owner/properties/received_events_url",
+          "type": "string"
+        },
+        "repos_url": {
+          "id": "/properties/owner/properties/repos_url",
+          "type": "string"
+        },
+        "site_admin": {
+          "id": "/properties/owner/properties/site_admin",
+          "type": "boolean"
+        },
+        "starred_url": {
+          "id": "/properties/owner/properties/starred_url",
+          "type": "string"
+        },
+        "subscriptions_url": {
+          "id": "/properties/owner/properties/subscriptions_url",
+          "type": "string"
+        },
+        "type": {
+          "id": "/properties/owner/properties/type",
+          "type": "string"
+        },
+        "url": {
+          "id": "/properties/owner/properties/url",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "public": {
+      "id": "/properties/public",
+      "type": "boolean"
+    },
+    "truncated": {
+      "id": "/properties/truncated",
+      "type": "boolean"
+    },
+    "updated_at": {
+      "id": "/properties/updated_at",
+      "type": "string"
+    },
+    "url": {
+      "id": "/properties/url",
+      "type": "string"
+    },
+    "user": {
+      "id": "/properties/user",
+      "type": "null"
+    }
+  },
+  "type": "object"
+}
