@@ -20,26 +20,31 @@ Stack: Node, CucumberJS, ajv, mocha, chai, request, chaiHttp, ...
 
 Sample:
 
+```
 //features/gist.feature
 
 Feature: Get gist details
-As a GitHub API client
-I want to see the details of a gist 
+    As a GitHub API client
+    I want to see the details of a gist
 
 Scenario: Get a gist
-When I GET the gist 2e0a63118e7224eb02351f5ae7176ae8
-Then the http status should be 200
-And $.url should equal "https://api.github.com/gists/2e0a63118e7224eb02351f5ae7176ae8"
+    When I GET the gist 2e0a63118e7224eb02351f5ae7176ae8
+    Then the http status should be 200
+    And $.url should equal "https://api.github.com/gists/2e0a63118e7224eb02351f5ae7176ae8"
+```
 
+```
 //features/step_definitions/gist_steps.js
 
 this.When(/^I GET the gist (.)$/, function(gist, callback) {
-// Call "https://api.github.com/gists/2e0a63118e7224eb02351f5ae7176ae8" api
+    // Call "https://api.github.com/gists/2e0a63118e7224eb02351f5ae7176ae8" api
 });
 
 this.Then(/^the http status should (\d+)$/, function(status, callback) {
-// Check if status is 200
+    // Check if status is 200
 });
 
 this.Then(/^$.url should equal (.)$/, function(url, callback) {
-// Check if url property is equal to "https://api.github.com/gists/2e0a63118e7224eb02351f5ae7176
+    // Check if url property is equal to "https://api.github.com/gists/2e0a63118e7224eb02351f5ae7176
+});
+```
