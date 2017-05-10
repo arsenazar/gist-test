@@ -99,22 +99,6 @@ const GithubStepsWrapper = function () {
   /**
    * Then
    */
-  this.Then(/^ths http status should be "([^"]*)"$/, function (status, done) {
-    if (!assertResponse(this.lastResponse, done)) {
-      return
-    }
-    // deliberately using != here (no need to cast integer/string)
-    /* jshint -W116 */
-    if (this.lastResponse.statusCode != status) {
-      /* jshint +W116 */
-      done('The last http response did not have the expected ' +
-        'status, expected ' + status + ' but got ' +
-        this.lastResponse.statusCode)
-    } else {
-      done()
-    }
-  });
-
   this.Then(/^the http status should be (\d+)$/, function (status, done) {
     if (!assertResponse(this.lastResponse, done)) {
       return
