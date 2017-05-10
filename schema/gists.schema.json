@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "https://api.github.com/gists",
+  "items": {
+    "id": "/items",
+    "properties": {
+      "comments": {
+        "id": "/items/properties/comments",
+        "type": "integer"
+      },
+      "comments_url": {
+        "id": "/items/properties/comments_url",
+        "type": "string"
+      },
+      "commits_url": {
+        "id": "/items/properties/commits_url",
+        "type": "string"
+      },
+      "created_at": {
+        "id": "/items/properties/created_at",
+        "type": "string"
+      },
+      "description": {
+        "id": "/items/properties/description",
+        "type": "string"
+      },
+      "files": {
+        "id": "/items/properties/files",
+        "properties": {
+          "gistfile1.txt": {
+            "id": "/items/properties/files/properties/gistfile1.txt",
+            "properties": {
+              "filename": {
+                "id": "/items/properties/files/properties/gistfile1.txt/properties/filename",
+                "type": "string"
+              },
+              "language": {
+                "id": "/items/properties/files/properties/gistfile1.txt/properties/language",
+                "type": "string"
+              },
+              "raw_url": {
+                "id": "/items/properties/files/properties/gistfile1.txt/properties/raw_url",
+                "type": "string"
+              },
+              "size": {
+                "id": "/items/properties/files/properties/gistfile1.txt/properties/size",
+                "type": "integer"
+              },
+              "type": {
+                "id": "/items/properties/files/properties/gistfile1.txt/properties/type",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "forks_url": {
+        "id": "/items/properties/forks_url",
+        "type": "string"
+      },
+      "git_pull_url": {
+        "id": "/items/properties/git_pull_url",
+        "type": "string"
+      },
+      "git_push_url": {
+        "id": "/items/properties/git_push_url",
+        "type": "string"
+      },
+      "html_url": {
+        "id": "/items/properties/html_url",
+        "type": "string"
+      },
+      "id": {
+        "id": "/items/properties/id",
+        "type": "string"
+      },
+      "owner": {
+        "id": "/items/properties/owner",
+        "properties": {
+          "avatar_url": {
+            "id": "/items/properties/owner/properties/avatar_url",
+            "type": "string"
+          },
+          "events_url": {
+            "id": "/items/properties/owner/properties/events_url",
+            "type": "string"
+          },
+          "followers_url": {
+            "id": "/items/properties/owner/properties/followers_url",
+            "type": "string"
+          },
+          "following_url": {
+            "id": "/items/properties/owner/properties/following_url",
+            "type": "string"
+          },
+          "gists_url": {
+            "id": "/items/properties/owner/properties/gists_url",
+            "type": "string"
+          },
+          "gravatar_id": {
+            "id": "/items/properties/owner/properties/gravatar_id",
+            "type": "string"
+          },
+          "html_url": {
+            "id": "/items/properties/owner/properties/html_url",
+            "type": "string"
+          },
+          "id": {
+            "id": "/items/properties/owner/properties/id",
+            "type": "integer"
+          },
+          "login": {
+            "id": "/items/properties/owner/properties/login",
+            "type": "string"
+          },
+          "organizations_url": {
+            "id": "/items/properties/owner/properties/organizations_url",
+            "type": "string"
+          },
+          "received_events_url": {
+            "id": "/items/properties/owner/properties/received_events_url",
+            "type": "string"
+          },
+          "repos_url": {
+            "id": "/items/properties/owner/properties/repos_url",
+            "type": "string"
+          },
+          "site_admin": {
+            "id": "/items/properties/owner/properties/site_admin",
+            "type": "boolean"
+          },
+          "starred_url": {
+            "id": "/items/properties/owner/properties/starred_url",
+            "type": "string"
+          },
+          "subscriptions_url": {
+            "id": "/items/properties/owner/properties/subscriptions_url",
+            "type": "string"
+          },
+          "type": {
+            "id": "/items/properties/owner/properties/type",
+            "type": "string"
+          },
+          "url": {
+            "id": "/items/properties/owner/properties/url",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "public": {
+        "id": "/items/properties/public",
+        "type": "boolean"
+      },
+      "truncated": {
+        "id": "/items/properties/truncated",
+        "type": "boolean"
+      },
+      "updated_at": {
+        "id": "/items/properties/updated_at",
+        "type": "string"
+      },
+      "url": {
+        "id": "/items/properties/url",
+        "type": "string"
+      },
+      "user": {
+        "id": "/items/properties/user",
+        "type": "null"
+      }
+    },
+    "type": "object"
+  },
+  "type": "array"
+}
