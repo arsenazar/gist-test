@@ -1,4 +1,4 @@
-const {GITHUB_API_URL} = require('./env');
+const {GITHUB_API_URL, USER_AGENT} = require('./env');
 const request = require('request');
 
 const github = {
@@ -20,7 +20,7 @@ const github = {
     let options = {
       baseUrl: GITHUB_API_URL,
       headers: {
-        'User-Agent': 'GITHUB API EXPLORER'
+        'User-Agent': USER_AGENT
       }
     };
     if (!anonymous)
@@ -60,6 +60,56 @@ const github = {
        */
       list: function (anonymous, cb) {
         let url = `/gists`;
+        that.API().get(url, function (error, res, body) {
+          if (error) {
+            cb(error, res);
+          } else {
+            cb(null, res, body)
+          }
+        })
+      },
+
+      /**
+       * Get a single gist
+       *
+       * @param id
+       * @param cb
+       */
+      get: function (id, cb) {
+        let url = `/gists/${id}`;
+        that.API().get(url, function (error, res, body) {
+          if (error) {
+            cb(error, res);
+          } else {
+            cb(null, res, body)
+          }
+        })
+      },
+
+      /**
+       * List the authenticated user's starred gists
+       *
+       * @param cb
+       */
+      starredList: function (cb) {
+        let url = `/gists/starred`;
+        that.API().get(url, function (error, res, body) {
+          if (error) {
+            cb(error, res);
+          } else {
+            cb(null, res, body)
+          }
+        })
+      },
+
+      /**
+       * Check if a gist is starred
+       *
+       * @param id
+       * @param cb
+       */
+      isStarred: function (id, cb) {
+        let url = `/gists/${id}/star`;
         that.API().get(url, function (error, res, body) {
           if (error) {
             cb(error, res);

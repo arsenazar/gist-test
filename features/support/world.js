@@ -14,6 +14,18 @@ const World = {
 
   listGists: function (anonymous, cb) {
     github.gists().list(anonymous, cb);
+  },
+
+  getGist: function (id, cb) {
+    github.gists().get(id, cb);
+  },
+
+  listStarredGists: function (cb) {
+    github.gists().starredList(cb);
+  },
+
+  checkIsStarred: function (id, cb) {
+    github.gists().isStarred(id, cb);
   }
 };
 
