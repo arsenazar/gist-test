@@ -1,19 +1,19 @@
 const tokens = require('./tokens');
-const gitAPI = require('../../models/gitAPI');
+const github = require('../../models/github');
 
 const World = {
   setUser: function (user, cb) {
     let token = tokens['user'] || '';
-    gitAPI.config(user, token);
+    github.config(user, token);
     cb(null);
   },
 
   listGistsForUser: function (user, cb) {
-    gitAPI.gists().listForUser(user, cb);
+    github.gists().listForUser(user, cb);
   },
 
   listGists: function (anonymous, cb) {
-    gitAPI.gists().list(anonymous, cb);
+    github.gists().list(anonymous, cb);
   }
 };
 

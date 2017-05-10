@@ -1,7 +1,7 @@
 const {GITHUB_API_URL} = require('./env');
 const request = require('request');
 
-const gistAPI = {
+const github = {
 
   user: '',
   accessToken: '',
@@ -72,4 +72,4 @@ const gistAPI = {
   },
 };
 
-module.exports = gistAPI;
+module.exports = github;
