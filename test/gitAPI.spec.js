@@ -1,5 +1,5 @@
 const assert = require('assert');
-const gitAPI = require('../models/gitAPI');
+const gitAPI = require('../models/github');
 const {GITHUB_USER, GITHUB_ACCESS_TOKEN} = require('./env');
 
 describe('Gist', function() {
